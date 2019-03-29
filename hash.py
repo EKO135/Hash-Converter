@@ -63,16 +63,13 @@ def sha1_func(event):
 
 
 ############################
-# decode info
+# info functions
 
 def decodeinfo():
 	tm.showinfo("Sorry Buddy, Not Happening", "SHA256 is a hashing function, not an encryption function. "
 	"Since SHA256 is not an encryption function (encrytions can be reversed), it cannot be decrypted. ... In that case, " 
 	"SHA256 cannot be reversed because it's a one-way function. Reversing it would cause a preimage attack, " 
 	"which defeats its design goal.")
-
-def decipher(event):
-	decodeinfo()
 
 def program_info():
 	tm.showinfo("EKO Hash Info", "this is a security or educational program, the idea is to have a GUI python progam "
@@ -145,8 +142,8 @@ root.bind("<Delete>", clear_text)
 root.bind("<Button-3>", lambda event: tm.showinfo("mate", "why you right click'n bro !!"))
 root.bind("<Control-Return>", md5_func)
 root.bind("<Alt-Return>", sha1_func)
-root.bind("<`>", decipher)
-root.bind("<~>", lambda event: program_info)
+root.bind("<`>", lambda event: decodeinfo())
+root.bind("<~>", lambda event: program_info())
 
 
 # submit and run the convert() function
